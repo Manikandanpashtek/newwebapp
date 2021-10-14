@@ -133,6 +133,7 @@ export default class SfmcApiHelper
               const front=
               {
                 soap_instance_url:response.soap_instance_url,
+                rest_instance_url:response.rest_instance_url,
                 refreshToken:response.refreshToken,
                 oauthToken:response.oauthToken
               }
