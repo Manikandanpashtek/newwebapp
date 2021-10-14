@@ -26,8 +26,9 @@ export default class SfmcApiHelper
   private parentFolderId= "12785";
   private FolderID = "";
   private paramData="";
+  private restinstanceurl ="";
   private jsonArr=new Array; 
-  private rest_instance_url = "https://mcj6cy1x9m-t5h5tz0bfsyqj38ky.rest.marketingcloudapis.com/";
+  // private rest_instance_url = "https://mcj6cy1x9m-t5h5tz0bfsyqj38ky.rest.marketingcloudapis.com/";
   private datas =[ {
     "keys":{
             "id": "47"
@@ -128,6 +129,7 @@ export default class SfmcApiHelper
            
             .then((response:any)=>
             {
+              restinstanceurl =response.data.restinstanceurl;
               console.log("Response to send:",response);
               const front=
               {
@@ -378,10 +380,10 @@ export default class SfmcApiHelper
               public retrieveDataExtensionRows(req:any,res:any)
               {
                 this.genericMethods
-                .retrievingDataExtensionRows( paramData.oauthToken,
-                  response.soap_instance_url,
-                  response.member_id,
-                  this.parentFolderId)
+                .retrievingDataExtensionRows(req.body.domainvalue.oauthToken,
+                  req.body.domainvalue.soapInstance,
+                  req.body.domainvalue.memberid,
+                  req.body.domainvalue.FolderID)
                   
                 .then((response:any)=>
                 {
@@ -400,7 +402,7 @@ export default class SfmcApiHelper
             public insertRow(req:any,res:any)
             {
               this.genericMethods
-              .insertRowHelper(paramData.oauthToken,this.rest_instance_url,this._deExternalKey,this.datas)
+              .insertRowHelper(req.body.oauthToken,req.body.rest_instance_url,this._deExternalKey,this.datas)
                 
               .then((response:any)=>
               {

@@ -429,12 +429,10 @@ function domainConfigurationDECheck(
 function retriverows()
 {
   const domainvalue = {
-    refreshToken: this.state.refreshtoken,
-    tssd: this.state.tssd,
-    memberid: this.state.member_id,
-    restInstance: this.state.restInstance,
-    soapInstance: this.state.soapInstance,
-    FolderID: this.state.FolderID,
+    oauthToken: this.oauthToken,
+    memberid: this.member_id,
+    soapInstance: this.soap_instance_ur,
+    FolderID: this.ParentFolderID,
   };
   axios({
     method: "POST",
