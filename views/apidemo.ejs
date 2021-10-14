@@ -208,26 +208,7 @@ function createFolder()
 }
 
       function insertRow(rowData, thisdata) {
-        console.log("memberid:" + thisdata.state.member_id);
-        console.log("refreshToken:" + thisdata.state.refreshtoken);
-        console.log("restInstance:" + thisdata.state.restInstance);
-        console.log("soapInstance:" + thisdata.state.soapInstance);
-        console.log(
-          "De external KEY " + thisdata.state.DEexternalKeyDomainConfiguration
-        );
-        const userInfobody = {
-          tssd: thisdata.state.tssd,
-          memberid: thisdata.state.member_id,
-          restInstance: thisdata.state.restInstance,
-          soapInstance: thisdata.state.soapInstance,
-          DEexternalKeyDomainConfiguration:
-            thisdata.state.DEexternalKeyDomainConfiguration,
-        };
-        const data = {
-          domainConfigurationData: rowData,
-          userInfobody: userInfobody,
-          refreshToken: thisdata.state.refreshtoken,
-        };
+      
         axios({
           method: "POST",
           url: "/insertrow",
@@ -241,7 +222,7 @@ function createFolder()
             console.log(
               "loadDataForDomainConfiguration:" + JSON.stringify(response.data)
             );
-            thisdata.setState({ refreshtoken: response.data.refreshToken });
+            
           })
           .catch(function (error) {
             console.log(error);
