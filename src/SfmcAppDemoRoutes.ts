@@ -191,6 +191,8 @@ export default class SfmcAppDemoRoutes
         req: express.Request,
         res: express.Response
       ) {
+        console.log("hello");
+        
         let self = this;
         self._apiHelper.retrieveDataExtensionRows(req, res);
       }
