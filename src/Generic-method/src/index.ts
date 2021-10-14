@@ -85,6 +85,7 @@ export default class mcGenericMethods {
           console.log("Response to get soap url:",response)
           const customResponse = {
             tssd: tssd,
+            rest_instance_url:response.data.rest_instance_url
             soap_instance_url : response.data.soap_instance_url,
             refreshToken: response.data.refresh_token,
             oauthToken: response.data.access_token,
