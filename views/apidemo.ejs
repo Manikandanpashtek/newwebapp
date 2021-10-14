@@ -419,6 +419,7 @@ function retriverows()
     soapInstance: this.soap_instance_ur,
     FolderID: this.ParentFolderID,
   };
+  console.log("domainvalue>>>",domainvalue);
   axios({
     method: "POST",
     url: "/retrievingDataExtensionRows",
