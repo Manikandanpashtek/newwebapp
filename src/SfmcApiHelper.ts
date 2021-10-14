@@ -129,7 +129,6 @@ export default class SfmcApiHelper
            
             .then((response:any)=>
             {
-              restinstanceurl =response.data.restinstanceurl;
               console.log("Response to send:",response);
               const front=
               {
