@@ -211,8 +211,8 @@ export default class mcGenericMethods {
       .then((response: any) => {
         const getUserInfoResponse = {
           member_id: response.data.organization.member_id,
-          soap_instance_url: response.data.rest.soap_instance_url,
-          rest_instance_url: response.data.rest.rest_instance_url,
+          soap_instance_url: response.data.soap_instance_url,
+          rest_instance_url: response.data.rest_instance_url,
           data:response.data
          
         };
