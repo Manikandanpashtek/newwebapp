@@ -76,7 +76,7 @@
     let member_id="";
     let FolderID="";
     let ParentFolderID="";
-    
+    let rest_instance_url="";
 
       function accessTokenGeneration(req,res) {
         axios({
@@ -93,6 +93,7 @@
             document.getElementById("demo").value=JSON.stringify(log)
             this.oauthToken=response.data.oauthToken
             this.soap_instance_url=response.data.soap_instance_url
+            this.rest_instance_url=response.data.rest_instance_url
           })
           .catch(function (error) {
             console.log(error);
@@ -230,7 +231,10 @@ function createFolder()
         axios({
           method: "POST",
           url: "/insertrow",
-          data: data,
+          data: {
+            rest_instance_url:rest_instance_url,
+            oauthToken:oauthToken
+          },
           headers: { "Content-Type": "application/json" },
         })
           .then(function (response) {

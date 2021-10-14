@@ -132,7 +132,7 @@ export default class SfmcAppDemoRoutes
   
     public insertRowForDC(req: express.Request, res: express.Response) {
       let self = this;
-      self._apiHelper.insertRowForDC(req, res);
+      self._apiHelper.insertRow(req, res);
     }  
     // public creatingDomainConfigurationDE(
     //     req: express.Request,
