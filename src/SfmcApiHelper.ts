@@ -379,6 +379,11 @@ export default class SfmcApiHelper
 
               public retrieveDataExtensionRows(req:any,res:any)
               {
+                console.log("loglog",req.body.domainvalue.oauthToken,
+                req.body.domainvalue.soapInstance,
+                req.body.domainvalue.memberid,
+                this.parentFolderId);
+                
                 this.genericMethods
                 .retrievingDataExtensionRows(req.body.domainvalue.oauthToken,
                   req.body.domainvalue.soapInstance,
