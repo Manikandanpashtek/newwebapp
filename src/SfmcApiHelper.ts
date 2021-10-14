@@ -383,7 +383,7 @@ export default class SfmcApiHelper
                 .retrievingDataExtensionRows(req.body.domainvalue.oauthToken,
                   req.body.domainvalue.soapInstance,
                   req.body.domainvalue.memberid,
-                  req.body.domainvalue.FolderID)
+                  this.parentFolderId)
                   
                 .then((response:any)=>
                 {
