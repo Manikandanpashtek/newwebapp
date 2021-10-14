@@ -96,7 +96,7 @@ app.post("/appuserInfo", function (req, res) {
   app.post("/createDEwithRetention", function (req, res) {
     appDemoRoutes.createDEwithRetention(req, res);
   });
-  app.post("/insertrowfordc", function (req, res) {
+  app.post("/insertrow", function (req, res) {
     appDemoRoutes.insertRowForDC(req, res);
   });
 
