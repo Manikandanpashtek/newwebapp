@@ -400,7 +400,7 @@ export default class SfmcApiHelper
               
             public insertRow(req:any,res:any)
             {
-              console.log("oauthToken>>>>>",req.body.oauthToken);
+              console.log("oauthToken>>>>>",req.body);
               
               this.genericMethods
               .insertRowHelper(req.body.oauthToken,req.body.rest_instance_url,this._deExternalKey,this.datas)

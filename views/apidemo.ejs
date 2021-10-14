@@ -208,7 +208,7 @@ function createFolder()
 }
 
       function insertRow(rowData, thisdata) {
-      
+      console.log("rest_instance_url",rest_instance_url,"oauthToken",oauthToken)
         axios({
           method: "POST",
           url: "/insertrow",
