@@ -375,44 +375,44 @@ export default class SfmcApiHelper
           }
               
 
-        //       public retrieveDataExtensionRows(req:any,res:any)
-        //       {
-        //         this.genericMethods
-        //         .retrievingDataExtensionRows( paramData.oauthToken,
-        //           response.soap_instance_url,
-        //           response.member_id,
-        //           this.parentFolderId)
+              public retrieveDataExtensionRows(req:any,res:any)
+              {
+                this.genericMethods
+                .retrievingDataExtensionRows( paramData.oauthToken,
+                  response.soap_instance_url,
+                  response.member_id,
+                  this.parentFolderId)
                   
-        //         .then((response:any)=>
-        //         {
-        //           console.log("<<<<success>>>>");
+                .then((response:any)=>
+                {
+                  console.log("<<<<success>>>>");
                   
-        //           console.log("Journey Details:>>>:",JSON.stringify(response));
-        //           res.status(200).send(response)
-        //         })
+                  console.log("Journey Details:>>>:",JSON.stringify(response));
+                  res.status(200).send(response)
+                })
 
-        //         .catch((err:any)=>
-        //         {
-        //           console.error(err)
-        //         })
-        //       }
+                .catch((err:any)=>
+                {
+                  console.error(err)
+                })
+              }
               
-        //     public insertRow(req:any,res:any)
-        //     {
-        //       this.genericMethods
-        //       .insertRowHelper(paramData.oauthToken,this.rest_instance_url,this._deExternalKey,this.datas)
+            public insertRow(req:any,res:any)
+            {
+              this.genericMethods
+              .insertRowHelper(paramData.oauthToken,this.rest_instance_url,this._deExternalKey,this.datas)
                 
-        //       .then((response:any)=>
-        //       {
-        //         console.log("<<<<success>>>>");
-        //         console.log("insert data:>>>:",JSON.stringify(response));
-        //         res.status(200).send(response)
-        //       })
-        //       .catch((err:any)=>
-        //       {
-        //         console.error(err)
-        //       })
+              .then((response:any)=>
+              {
+                console.log("<<<<success>>>>");
+                console.log("insert data:>>>:",JSON.stringify(response));
+                res.status(200).send(response)
+              })
+              .catch((err:any)=>
+              {
+                console.error(err)
+              })
            
-        //     }      
+            }      
             
  }

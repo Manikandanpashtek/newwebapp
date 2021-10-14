@@ -96,9 +96,9 @@ app.post("/appuserInfo", function (req, res) {
   app.post("/createDEwithRetention", function (req, res) {
     appDemoRoutes.createDEwithRetention(req, res);
   });
-//   app.post("/insertrowfordc", function (req, res) {
-//     appDemoRoutes.insertRowForDC(req, res);
-//   });
+  app.post("/insertrowfordc", function (req, res) {
+    appDemoRoutes.insertRowForDC(req, res);
+  });
 
   app.get("/getactivejourneys", function (req, res) {
     appDemoRoutes.getActiveJourneys(req, res);
@@ -113,9 +113,9 @@ app.post("/appuserInfo", function (req, res) {
     appDemoRoutes.retrievingDataExtensionFolderID(req, res);
   });
   
-//   app.post("/retrievingDataExtensionRows", function (req, res) {
-//     appDemoRoutes.retrievingDataExtensionRows(req, res);
-//   });
+  app.post("/retrievingDataExtensionRows", function (req, res) {
+    appDemoRoutes.retrievingDataExtensionRows(req, res);
+  });
   
   app.post("/datafoldercheck", function (req, res) {
     appDemoRoutes.dataFolderCheck(req, res);

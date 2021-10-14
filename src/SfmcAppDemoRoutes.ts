@@ -130,10 +130,10 @@ export default class SfmcAppDemoRoutes
       self._apiHelper.appuserInfo(req, res);
     }
   
-    // public insertRowForDC(req: express.Request, res: express.Response) {
-    //   let self = this;
-    //   self._apiHelper.insertRowForDC(req, res);
-    // }  
+    public insertRowForDC(req: express.Request, res: express.Response) {
+      let self = this;
+      self._apiHelper.insertRowForDC(req, res);
+    }  
     // public creatingDomainConfigurationDE(
     //     req: express.Request,
     //     res: express.Response,     
@@ -187,12 +187,12 @@ export default class SfmcAppDemoRoutes
         let self = this;
         self._apiHelper.retrievingDataExtensionFolderID(req, res);
       }
-    //   public retrievingDataExtensionRows(
-    //     req: express.Request,
-    //     res: express.Response
-    //   ) {
-    //     let self = this;
-    //     self._apiHelper.retrievingDataExtensionRows(req, res);
-    //   }
+      public retrievingDataExtensionRows(
+        req: express.Request,
+        res: express.Response
+      ) {
+        let self = this;
+        self._apiHelper.retrievingDataExtensionRows(req, res);
+      }
 
 }
