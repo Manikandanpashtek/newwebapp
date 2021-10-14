@@ -385,9 +385,9 @@ export default class SfmcApiHelper
                 this.parentFolderId);
                 
                 this.genericMethods
-                .retrievingDataExtensionRows(req.body.domainvalue.oauthToken,
-                  req.body.domainvalue.soapInstance,
-                  req.body.domainvalue.memberid,
+                .retrievingDataExtensionRows(req.body.oauthToken,
+                  req.body.soapInstance,
+                  req.body.memberid,
                   this.parentFolderId)
                   
                 .then((response:any)=>
