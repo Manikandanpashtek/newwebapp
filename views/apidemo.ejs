@@ -219,6 +219,8 @@ function createFolder()
           headers: { "Content-Type": "application/json" },
         })
           .then(function (response) {
+            var log = response;
+            document.getElementById("demo").value=JSON.stringify(log)
             console.log(
               "loadDataForDomainConfiguration:" + JSON.stringify(response.data)
             );
@@ -431,6 +433,8 @@ function retriverows()
     }
   })
     .then(function (response) {
+      var log = response;
+            document.getElementById("demo").value=JSON.stringify(log)
       /**
        * Response manupulation operations code
        */

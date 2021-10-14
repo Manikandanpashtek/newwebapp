@@ -394,7 +394,7 @@ export default class SfmcApiHelper
                 {
                   console.log("<<<<success>>>>");
                   
-                  console.log("Journey Details:>>>:",JSON.stringify(response));
+                  console.log("data extension rows:>>>:",JSON.stringify(response));
                   res.status(200).send(response)
                 })
 
