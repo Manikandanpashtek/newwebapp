@@ -109,6 +109,7 @@ export default class SfmcApiHelper
         postBody.client_id,
         postBody.client_secret,
         postBody.grant_type,
+        tssd,
         postBody.code,
         postBody.redirect_uri
       )
