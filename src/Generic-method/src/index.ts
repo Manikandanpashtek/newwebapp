@@ -1183,7 +1183,80 @@ export default class mcGenericMethods {
 					});
         });
       }
-      }
+
+ public async createsimplejourney(req: any, res: any, jourData: string, refreshToken: string, accessToken: string) 
+  {   
+      var refreshToken = refreshToken
+      console.log("data>>",jourData);
+      axios
+      ({method: 'post',
+        url: 'https://'+req.body.tssd+'.rest.marketingcloudapis.com/interaction/v1/interactions',
+        headers: 
+        {
+          'Content-Type': 'application/json',
+          'Authorization':  'Bearer '+ accessToken
+        },
+        data :jourData
+      })
+      .then(function (response:any) {
+        console.log("got response",response)
+        const customReponse ={
+          refreshToken:refreshToken,
+          journeyResponse:response.data        
+        }
+        res.status(200).send(customReponse);
+      })
+      .catch(function (error:any) {
+          console.log(error);
+          res.status(500).send(error);
+      });
+  };
+
+public async getINActiveJourney(token:string,tssd:string)
+     {
+       return new Promise<any>((resolve, reject) => {
+          let headers = {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          };
+          // https://mcj6cy1x9m-t5h5tz0bfsyqj38ky.rest.marketingcloudapis.com/
+          let JourneyUrl =
+            "https://" +
+            tssd +
+            ".rest.marketingcloudapis.com/interaction/v1/interactions?status=Draft";
+          axios({
+            method: "get",
+            url: JourneyUrl,
+            headers: headers,
+          })
+            .then((response: any) => {
+              let sendresponse = {
+                // refreshToken: refreshTokenbody,
+                journeys: response.data,
+              };
+              resolve(sendresponse);
+            })
+            .catch((error: any) => {
+              // error
+              let errorMsg = "Error getting the INActive Journeys......";
+              errorMsg += "\nMessage: " + error.message;
+              errorMsg +=
+                "\nStatus: " + error.response
+                  ? error.response.status
+                  : "<None>";
+              errorMsg +=
+                "\nResponse data: " + error.response.data
+                  ? //Utils.prettyPrintJson(
+                    JSON.stringify(error.response.data)
+                  : "<None>";
+              //Utils.logError(errorMsg);
+
+              reject(errorMsg);
+            });
+        }); 
+     } 
+
+}
 
      
         
